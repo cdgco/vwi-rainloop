@@ -1,5 +1,5 @@
 # VWI Rainloop
-## Rainloop Webmail Client Plugin for Vesta Web Interface
+Rainloop Webmail Client Plugin for Vesta Web Interface
 
 Installation Instructions:
 
