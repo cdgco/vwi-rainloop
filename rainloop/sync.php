@@ -1,10 +1,11 @@
 <?php 
 
-require( '../../includes/config.php');
+require( '../../includes/includes.php');
 $rainloopdir = 'data/_data_/_default_/domains/';
 
 // Build array to create http query
 $uservars = array(
+		    'hash' => $vst_apikey,
 		    'user' => $vst_username,
 		    'password' => $vst_password,
 		    'cmd' => 'v-list-users',
@@ -14,7 +15,7 @@ $uservars = array(
 $userdata = http_build_query($uservars);
 // Build curl query and execute
 $curl = curl_init();
-curl_setopt($curl, CURLOPT_URL, 'https://' . VESTA_HOST_ADDRESS . ':8083/api/');
+curl_setopt($curl, CURLOPT_URL, $vst_url);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER,true);
 curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
@@ -27,6 +28,7 @@ $userout = json_decode($users, true);
 foreach ($userout as $key => $value){
 	// Build array to create http query
 	$postvars = array(
+		'hash' => $vst_apikey,
 		'user' => $vst_username,
 		'password' => $vst_password,
 		'cmd' => 'v-list-web-domains',
@@ -37,7 +39,7 @@ foreach ($userout as $key => $value){
 	$postdata = http_build_query($postvars);
 	// Build curl query and execute
 	$curl = curl_init();
-	curl_setopt($curl, CURLOPT_URL, 'https://' . VESTA_HOST_ADDRESS . ':8083/api/');
+	curl_setopt($curl, CURLOPT_URL, $vst_url);
 	curl_setopt($curl, CURLOPT_RETURNTRANSFER,true);
 	curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 	curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
