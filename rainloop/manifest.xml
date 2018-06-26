@@ -3,6 +3,8 @@
     <fa-icon> fa-envelope</fa-icon>
     <section>apps</section> 
     <developer>Vesta Web Interface</developer>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
     <admin-only>No</admin-only>
+    <new-tab>Yes</new-tab>
+    <hide>No</hide>
 </plugin>
