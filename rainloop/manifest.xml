@@ -1,6 +1,6 @@
 <plugin>
     <name>Rainloop Webmail</name>
-    <fa-icon> fa-envelope</fa-icon>
+    <fa-icon>fa-envelope</fa-icon>
     <section>apps</section> 
     <developer>Vesta Web Interface</developer>
     <version>0.1.1</version>
